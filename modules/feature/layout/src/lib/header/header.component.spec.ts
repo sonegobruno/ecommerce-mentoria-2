@@ -20,7 +20,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should contain title', () => {
-    const header: HTMLHeadingElement = fixture.nativeElement.querySelector('header');
+    const header: HTMLElement = fixture.nativeElement.querySelector('header');
     expect(header.textContent).toBe('Ecommerce');
   })
 });
