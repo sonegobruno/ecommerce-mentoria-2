@@ -26,7 +26,7 @@ export class ProductSearchComponent {
   products$ = this.control.valueChanges.pipe(
     debounceTime(500),
     distinctUntilChanged(),
-    filter((text) => text?.length > 1),
+    filter((text) => text?.length > 0),
     switchMap((text) => this.productSearchService.searchByName(text))
   );
 
