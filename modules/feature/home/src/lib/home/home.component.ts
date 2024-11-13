@@ -1,14 +1,16 @@
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { RecommendedProductsService } from '@ecommerce/product-data-access';
-import { Product } from 'modules/data-access/product/src/lib/models/product';
+import {
+  Product,
+  RecommendedProductsService,
+} from '@ecommerce/product-data-access';
+import { ProductCardComponent } from '@ecommerce/product-ui';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'lib-home',
   standalone: true,
-  imports: [MatCardModule, CurrencyPipe, AsyncPipe],
+  imports: [AsyncPipe, ProductCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
