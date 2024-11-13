@@ -6,13 +6,14 @@ import { Product } from '../models/product';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductSearchService {
+export class RecommendedProductsService {
   constructor(private httpClient: HttpClient) {}
 
-  searchByName(name: string): Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(`/products`, {
       params: {
-        name,
+        page: 1,
+        limit: 6,
       },
     });
   }

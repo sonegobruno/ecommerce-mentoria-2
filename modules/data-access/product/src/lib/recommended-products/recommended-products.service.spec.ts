@@ -4,33 +4,31 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { ProductSearchService } from './product-search.service';
-
 import { mockProducts } from '../mocks/product.mock';
 import { Product } from '../models/product';
+import { RecommendedProductsService } from './recommended-products.service';
 
-describe('ProductSearchService', () => {
-  let service: ProductSearchService;
+describe('RecommendedProductsService', () => {
+  let service: RecommendedProductsService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
+    service = TestBed.inject(RecommendedProductsService);
     httpMock = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(ProductSearchService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return products correctly', () => {
-    const mockName = 'notebook';
-    const url = `/products?name=${mockName}`;
+  it('should return recommended products correctly', () => {
+    const url = `/products?page=1&limit=6`;
     let result: Product[] = [];
 
-    service.searchByName(mockName).subscribe((products) => (result = products));
+    service.getProducts().subscribe((products) => (result = products));
 
     const request = httpMock.expectOne(url);
     request.flush(mockProducts);
