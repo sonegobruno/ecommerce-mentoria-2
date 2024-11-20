@@ -4,6 +4,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 import { ProductSearchService } from '@ecommerce/product-data-access';
 import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs';
 
@@ -16,6 +17,7 @@ import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs';
     MatFormFieldModule,
     ReactiveFormsModule,
     AsyncPipe,
+    RouterModule,
   ],
   templateUrl: './product-search.component.html',
   styleUrl: './product-search.component.scss',
