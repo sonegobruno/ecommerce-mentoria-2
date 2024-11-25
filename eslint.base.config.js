@@ -7,7 +7,7 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
-      "no-console": ["error"],
+      'no-console': ['error'],
       '@nx/enforce-module-boundaries': [
         'error',
         {
@@ -24,7 +24,11 @@ module.exports = [
             },
             {
               sourceTag: 'type:feature',
-              onlyDependOnLibsWithTags: ['type:feature', 'type:data-access', 'type:ui'],
+              onlyDependOnLibsWithTags: [
+                'type:feature',
+                'type:data-access',
+                'type:ui',
+              ],
             },
             {
               sourceTag: 'type:ui',

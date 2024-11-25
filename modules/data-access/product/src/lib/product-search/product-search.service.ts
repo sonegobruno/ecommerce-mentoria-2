@@ -16,4 +16,8 @@ export class ProductSearchService {
       },
     });
   }
+
+  getById(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`/products/${id}`);
+  }
 }
