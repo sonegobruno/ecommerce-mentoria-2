@@ -4,7 +4,7 @@
   "sourceRoot": "modules/ui/product/src",
   "prefix": "ecommerce",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:ui"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
