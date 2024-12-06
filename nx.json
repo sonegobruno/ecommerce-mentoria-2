@@ -75,10 +75,12 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "prefix": "ecommerce"
     },
     "@nx/angular:component": {
-      "style": "css"
+      "style": "css",
+      "prefix": "ecommerce"
     }
   },
   "defaultProject": "ecommerce"
